@@ -30,13 +30,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
+.page{
+    overflow: hidden;
+}
 
 
 .container{
     width: 100%;
-    max-width: 1200px;
+    max-width: 1230px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 /*=====INTRO=====*/
@@ -65,10 +68,10 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 .intro__title{
-    margin: 0px 0;
+    margin: 20px 0;
     
-    font-size: 100px;
-    line-height: 140px;
+    font-size: 150px;
+    line-height: 1;
     font-weight: 700;
 }
 .intro__title:after{
@@ -84,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .intro__suptitle{
     font-family: 'Kaushan Script', cursive;
-    font-size: 42px;
+    font-size: 72px;
     margin-top: 50px;
     
 }
@@ -265,10 +268,11 @@ h1, h2, h3, h4, h5, h6 {
 .card{
     display: flex;
     justify-content: space-between;
-    margin: 100px 0px;
+    margin: 80px -15px;
 }
 .card__item{
-    width: 380px;
+    width: 33%;
+    padding: 0 15px;
     
 }
 .card__inner{
@@ -295,6 +299,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .card__img img{
     display: block;
+    width: 100%;
+    height: auto;
     opacity: 1;
     transition: opacity ease 0.3s;
     
@@ -353,15 +359,14 @@ h1, h2, h3, h4, h5, h6 {
 .stat__inner{
     
     display: flex;
-    
-    
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .stat__item{
     padding: 70px 30px;
-    display: flex;
+    
     flex: 1 1 0;
-    flex-direction: column;
-    justify-content: center;
+    
     text-align: center;
     border-right: 1px solid #b5eae0;
 }
@@ -369,13 +374,14 @@ h1, h2, h3, h4, h5, h6 {
     border-left: 1px solid #b5eae0;
 }
 .stat__count{
-    font-size: 4.8em;
+    font-size: 72px;
     font-weight: 700;
     color: #fff;
+    line-height: 1;
     
 }
 .stat__text{
-    font-size: 1em;
+    font-size: 14px;
     color: #fff;
     text-transform: uppercase;
 }
@@ -383,17 +389,20 @@ h1, h2, h3, h4, h5, h6 {
 /*<!--   =======services=======-->  */
 .services{
     display: flex;
-    
+    flex-wrap: wrap;
    
 }
-.services:last-child{
-    margin-bottom: 100px;
-}
+
 .services__item{
     position: relative;
-    flex: 1 1 0;
+    margin-bottom: 50px;
+    width: 33%;
     padding-left: 85px;
     
+}
+.services__item--border{
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 30px;
 }
 .services__icon{
     position: absolute;
@@ -424,6 +433,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .devices__item{
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .devices__item--iphone{
@@ -436,11 +447,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .wedo{
     display: flex;
-    
-    
+    margin: 0 -15px 0px;;
+    flex-wrap: wrap;
 }
 .wedo__item{
     width: 50%;
+    padding: 0 15px;
+}
+.wedo__image{
+    display: block;
+    max-width: 100%;
+    height: auto;
     
 }
 
@@ -520,6 +537,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 .rewiews__photo{
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -599,7 +617,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .works{
     display: flex;
-    
+    flex-wrap: wrap;
 }
 
 .works__col{
@@ -736,12 +754,18 @@ h1, h2, h3, h4, h5, h6 {
 .blog {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 80px;
 }
 .blog__item {
     
     width: 30%;
     margin-bottom: 20px;
+}
+.blog__img img{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 .blog__header {
     display: block;
@@ -856,6 +880,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer__inner{
     padding: 70px 0 70px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -909,6 +934,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #95e1d3;
     text-decoration: none;
     margin-left: 10px;
+    border-radius: 15%;
+    
+    transition: color ease-in .2s;
+}
+.footer__social-content a:hover {
+    color: #4ebaa6;
 }
 
 
@@ -917,6 +948,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     max-width: 380px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .subscribe__input {
@@ -1014,13 +1046,24 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
 }
 .instagram__item {
-    flex: 1 1 0;
+    
+    
     width: 33.3333%;
-    border-bottom: 1px solid #fff;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    
     
 }
+.instagram__item:hover.instagram__item img{
+    opacity: .8;
+}
 .instagram__item img {
+    transition: opacity ease-in-out 0.2s;
     display: block;
+    opacity: 1;
+    max-width: 100%;
+    height: auto;
+    
 }
 .more a{
     font-size: 12px;
@@ -1045,3 +1088,369 @@ h1, h2, h3, h4, h5, h6 {
     color: #f38181;
 } 
     
+
+
+@media (max-width: 1490px){
+/*    intro*/
+    .intro__suptitle {
+        font-size: 50px;
+    }
+    .intro__title {
+        font-size: 120px;
+    }
+}
+
+@media (max-width: 1230px){
+    /*    intro*/
+    .intro__suptitle {
+        font-size: 42px;
+    }
+    .intro__title {
+        font-size: 100px;
+    }
+    
+}
+
+@media (max-width: 990px){
+    /*    intro*/
+    .intro__suptitle {
+        font-size: 32px;
+    }
+    .intro__title {
+        font-size: 80px;
+    }
+    .slider__item.active:before{
+        width: 40%;
+    }
+    .services__item{
+    width: 50%;
+    padding-bottom: 0;
+    }
+    .services__item--border{
+        border: 0;
+    }
+    .section__header--design{
+        padding-top: 50px;
+    }
+    
+    /*    rewiew*/
+    .rewiews{
+        padding: 40px 70px;
+    }
+    .rewiews__item{
+        padding-left: 120px;
+    }
+    .rewiews__photo{
+        width: 105px;
+    }
+    .rewiews__text {
+        font-size: 18px;
+    }
+    .rewiews__name{
+        font-size: 18px;
+    }
+    
+    .section--grey{
+        margin-top: 0px;
+        
+    }
+    .clients__content {
+        padding-left: 120px;
+        padding-right: 25px;
+    }
+    .clients__item {
+        
+        margin: 20px 0px;
+    }
+    .clients__img img {
+        display: block;
+        max-width: 90px;
+        height: auto;
+    }
+    
+    
+    
+    .blog__img img{
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    .blog__date {
+        
+        
+        font-size: 15px;
+        
+        padding: 15px 10px;
+        
+    }
+/*    foooter*/
+    .footer__inner{
+        padding: 20px 0px 20px;
+    }
+    .footer__col--first{
+        width: 100%;
+    }
+    .footer__col--second{
+        width: 50%;
+    }
+    .footer__col--third{
+        width: 50%;
+    }
+    
+/*    instagram*/
+    .instagram {
+        justify-content: flex-start;
+    }
+    .instagram__item{
+        width: auto;
+    }
+}
+
+@media (max-width: 770px){
+    /*    intro*/
+    nav{
+        display: none;
+    }
+/*    slider*/
+    .slider__text{
+        display: none;
+    }
+/*    card*/
+    .card{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 50px 0;
+        
+    }
+    .card__item{
+        width: 100%;
+        max-width: 410px;
+        padding: 10px;
+    }
+    
+/*    stat*/
+    .stat__item{
+        flex: none;
+        width: 33%;
+        border: 0;
+        padding: 40px 20px;
+    }
+    .stat__item:first-child{
+        border: 0;
+    }
+    .stat_count{
+        font-size: 52px;
+    }
+/*    header*/
+    .section__header{
+        margin: 40px 0;
+    }
+    
+/*    services*/
+    .services{
+        justify-content: center;
+    }
+    .services__item{
+    width: 100%;
+    max-width: 440px;
+    margin-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 0;
+    }
+    .services__icon{
+        left: 0;
+    }
+    .wedo__image{
+        display: none;
+        
+    }
+    .wedo__item {
+        width: 100%;
+    }
+    
+    
+    .card__person{
+        margin:  5px 0;
+    }
+    
+/*    rewiew*/
+    .rewiews{ 
+        padding: 40px 0px;
+    }
+    .rewiews__item{
+        padding-left: 0;
+    }
+    .rewiews__photo{
+        padding-bottom: 15px;
+        position: static;
+        margin: 0 auto;
+    }
+    
+/*    logos*/
+    .logos{
+        flex-wrap: wrap;
+        padding: 0px 5px;
+    }
+    .logos__item{
+        width: 33.333%;
+        
+    }
+    .logos__item img{
+        display: block;
+        margin: 0 auto;
+        padding: 15px 0px;
+        max-width: 60%;
+        height: auto;
+    }
+    .logos__item img{
+        display: block;
+        max-width: 100%;
+        height: auto
+    }
+    
+    .works__col{
+        flex: none;
+        width: 50%;
+    
+    }
+    .clients{
+        justify-content: center;
+    }
+    .clients__item {
+        width: 100%;
+        max-width: 600px;
+        
+    }
+    .blog{
+        justify-content: center;
+    }
+    .blog__item {
+        width: 100%;
+        max-width: 380px;
+    }
+    
+/*    footer*/
+    .footer__col{
+        width: 100%;
+    }
+    .blogs{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .blogs__item{
+        width: 100%;
+        max-width: 600px;
+    }
+    .instagram{
+        width: 100%;
+        max-width: 600px;
+    }
+}
+@media (max-width: 450px){
+    /*    intro*/
+    .intro__suptitle {
+        font-size: 22px;
+    }
+    .intro__title {
+        font-size: 40px;
+/*        skider*/
+    }
+    .slider__item.active:before{
+        width: 50%;
+    }
+/*    sect_title*/
+    .section__title{
+        font-size: 1.6em;
+    }
+    .section__suptitle{
+        font-size: 1.3em;
+    }
+    .section__title:after{
+        margin: 20px auto;
+    }
+    .section__header{
+        margin: 25px 0;
+    }
+    
+    .card{
+        margin: 40px 0;
+    }
+    .stat__inner{
+        flex-direction: column;
+    }
+    .stat__item{
+        width: 100%;
+        padding: 30px 15px;
+        border-bottom: 1px solid #b5eae0;
+    }
+    .stat__item:first-child{
+        border-bottom: 1px solid #b5eae0;
+    }
+/*    services*/
+    .section__header--design{
+        padding-top: 40px;
+    }
+    .services__item{
+    width: 100%;
+    max-width: 400px;
+    
+    }
+/*    devices*/
+    .devices{
+        max-width: 320px;
+    }
+    .devices__item--iphone {
+    
+    bottom: -55px;
+    right: -75px;
+    
+    max-height: 320px;
+    }
+    .card__item{
+        max-width: 350px;
+    }
+    /*    logos*/
+    .logos{
+        
+    }
+    .logos__item{
+        width: 50%;
+        
+    }
+    .logos__item img{
+        max-width:  50%;
+    }
+    .works__col{
+        
+        width: 100%;
+    
+    }
+    .works__title, .works__text{
+        font-size: 12px;
+    }
+    .clients__img img{
+        position: static;
+        margin: 0 auto;
+    }
+    .clients__content {
+        text-align: center;
+        padding: 0;
+    }
+    .clients__pos::after{
+        margin: 20px auto;
+    }
+    
+    .subscribe{
+        margin: 0 auto;
+        width: 100%;
+        max-width: none;
+    }
+    .subscribe__input{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .subscribe__button{
+        width: 100%;
+    }
+}
