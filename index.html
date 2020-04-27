@@ -7,30 +7,35 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a003dcb5dd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 </head>
 <body>
 <!--   =======HEADER=======-->
-    <header class="header">
+    <header id="header" class="header">
         <div class="container">
             <div class="header__inner">
-                <div class="header__logo">
+                <div data-scroll="#intro"  class="header__logo">
                     MoGo
                 </div>
-                <nav class="nav">
-                    <a class="nav__link" href="#">About</a>
-                    <a class="nav__link" href="#">service</a>
-                    <a class="nav__link" href="#">work</a>
-                    <a class="nav__link" href="#">blog</a>
-                    <a class="nav__link" href="#">contact</a>
+                <nav id="nav" class="nav">
+                    <a class="nav__link active" data-scroll="#about" href="#">About</a>
+                    <a class="nav__link" data-scroll="#services"  href="#">service</a>
+                    <a class="nav__link" data-scroll="#works"  href="#">work</a>
+                    <a class="nav__link" data-scroll="#blog"  href="#">blog</a>
+                    <a class="nav__link" data-scroll="#footer"  href="#">contact</a>
                     <a class="nav__link" href="#"><i class="fas fa-shopping-cart"></i></a>
                     <a class="nav__link" href="#"><i class="fas fa-search"></i></a>
                 </nav>
+                <button id="burger" class="nav__toggle">
+                    <span class="nav__toggle-item"></span>
+                </button>
             </div>
         </div>
     </header>
 <!--   =======INTRO=======-->    
 <div class="page">
-    <div class="intro">
+    <div id="intro" class="intro">
             <div class="container">
                 <div class="intro__inner">
                     <div class="intro__suptitle">
@@ -64,7 +69,9 @@
             </div>
     </div>   
 
-    <section class="section">
+   
+<!--   ABOUT-->
+    <section id="about" class="section">
         <div class="container">
 
             <div class="section__header">
@@ -167,7 +174,7 @@
         </div>
     </div>
         <!--   =======SRVICES=======-->   
-    <div class="section">
+    <div id="services" class="section">
         <div class="container">
             <div class="section__header">
                 <h3 class="section__suptitle">
@@ -263,7 +270,7 @@
     </section>
         <!--/*==========devvices========*/-->
 
-
+<!--wedo-->
     <section class="section">
         <div class="container">
             <div class="section__header">
@@ -282,31 +289,31 @@
                     <img class="wedo__image" src="images/wedo.jpg" alt="">
                 </div>
                 <div class="wedo__item">
-                    <div class="accordion">
-                       <div class="accordion__item ">
+                    <div id="accordion" class="accordion">
+                       <div class="accordion__item" data-collapse="#wedo1">
                             <div class="accordion__header">
                                <img class="accordion__icon" src="images/services/photography.png" alt="">
                                 <div class="accordion__title">photography</div>
                             </div>
-                            <div class="accordion__content">
+                            <div class="accordion__content" id="wedo1">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
                         </div>
-                        <div class="accordion__item active">
+                        <div class="accordion__item" data-collapse="#wedo2">
                             <div class="accordion__header">
                                <img class="accordion__icon" src="images/services/photography.png" alt="">
                                 <div class="accordion__title">photography</div>
                             </div>
-                            <div class="accordion__content">
+                            <div class="accordion__content" id="wedo2">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
                         </div>
-                        <div class="accordion__item ">
+                        <div class="accordion__item" data-collapse="#wedo3">
                             <div class="accordion__header">
                                <img class="accordion__icon" src="images/services/photography.png" alt="">
                                 <div class="accordion__title">photography</div>
                             </div>
-                            <div class="accordion__content">
+                            <div class="accordion__content" id="wedo3">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
                         </div>
@@ -320,23 +327,35 @@
 
         </div>
     </section>
-
+<!--rewiew-->
     <section class="section section--grey">
         <div class="container">
+            <div data-slider>
+                <div class="rewiews">
+                    <div class="rewiews__item">
+                        <img class="rewiews__photo" src="images/avatar.png" alt="" target="_blank">
+                        <div class="rewiews__text">
+                            “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
+                        </div>
+                        <div class="rewiews__name">
+                            Jon Doe
+                        </div>
+                    </div>
 
-            <div class="rewiews">
-                <div class="rewiews__item">
-                    <img class="rewiews__photo" src="images/avatar.png" alt="" target="_blank">
-                    <div class="rewiews__text">
-                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
-                    </div>
-                    <div class="rewiews__name">
-                        Jon Doe
-                    </div>
                 </div>
+                <div class="rewiews">
+                    <div class="rewiews__item">
+                        <img class="rewiews__photo" src="images/avatar.png" alt="" target="_blank">
+                        <div class="rewiews__text">
+                            “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
+                        </div>
+                        <div class="rewiews__name">
+                            Jon Doe
+                        </div>
+                    </div>
 
+                </div>
             </div>
-
         </div>
 
     </section>
@@ -481,9 +500,7 @@
             </div> 
         </section>
 
-    <section class="section">
-
-    </section>
+    <section id="works" class="section">
         <div class="container">
             <div class="section__header">
                 <h3 class="section__suptitle">
@@ -593,23 +610,38 @@
                 </div>
             </div>
         </div>
-
+</section>
+   
     <section class="section">
         <div class="container">
 
-            <div class="rewiews">
-                <div class="rewiews__item">
-                    <img class="rewiews__photo" src="images/avatar.png" alt="" target="_blank">
-                    <div class="rewiews__text">
-                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
+           <div data-slider>
+               
+                <div class="rewiews">
+                    <div class="rewiews__item">
+                        <img class="rewiews__photo" src="images/avatar.png" alt="" target="_blank">
+                        <div class="rewiews__text">
+                            “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
+                        </div>
+                        <div class="rewiews__name">
+                            Jon Doe
+                        </div>
                     </div>
-                    <div class="rewiews__name">
-                        Jon Doe
-                    </div>
+
                 </div>
+                <div class="rewiews">
+                    <div class="rewiews__item">
+                        <img class="rewiews__photo" src="images/avatar.png" alt="" target="_blank">
+                        <div class="rewiews__text">
+                            “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
+                        </div>
+                        <div class="rewiews__name">
+                            Jon Doe
+                        </div>
+                    </div>
 
+                </div>
             </div>
-
         </div>
 
     </section>
@@ -694,7 +726,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section id="blog" class="section">
         <div class="container">
             <div class="section__header">
                 <h3 class="section__suptitle">
@@ -804,7 +836,7 @@
         </div>
     </section>
 
-    <footer class="footer">
+    <footer id="footer" class="footer">
         <div class="container">
 
             <div class="footer__inner">
@@ -932,7 +964,10 @@
 
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+<script src="js/app.js" type="text/javascript"></script>
 
 
 

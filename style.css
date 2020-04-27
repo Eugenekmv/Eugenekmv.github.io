@@ -46,6 +46,8 @@ h1, h2, h3, h4, h5, h6 {
 .intro{
     width: 100%;
     height: 100vh;
+    min-height: 600px;
+    
     
     color: #fff;
     background: url("images/intro.jpg") center no-repeat;
@@ -54,6 +56,8 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    
+    position: relative;
 }
 
 
@@ -138,7 +142,24 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     
     color: #fff;
+    cursor: pointer;
 }   
+
+.header--fixed{
+    position: fixed;
+    background-color: rgb(233, 143, 132);
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    transform: translate3d(0, 0, 0);
+    padding: 15px 0;
+    
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2)
+}
+.header--fixed .header__inner{
+    margin-top: 0;
+}
 /*=====NAV=====*/
 .nav{
     font-size: 1em;
@@ -179,9 +200,86 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav__link:hover{
     color: #fce38a;
+}   
+.nav__link.active {
+    color: #fce38a;
+}
+.nav__link.active:after{
+    opacity: 1;
+}
+/*    navtogglr*/
+
+.nav__toggle{
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+    padding: 15px;
+    
+    display: none;
+    width: 30px;
+    
+    border: 0;
+    outline: 0;
+    background: 0;
+    cursor: pointer;
+    
     
     
 }
+.nav__toggle-item{
+    
+  
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    content: "";
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    border-radius: 1px;
+    
+   
+}
+.nav__toggle-item:before,
+.nav__toggle-item:after{
+    position: absolute;
+    display: block;
+    left: 0;
+    z-index: 1;
+    content: "";
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    border-radius: 1px;
+    transition: transform linear 0.2s
+}
+.nav__toggle-item:before{
+    top: -7px;
+}
+.nav__toggle-item:after{
+    bottom: -7px;
+}
+    
+.nav__toggle.active .nav__toggle-item{
+    background: none;
+}
+.nav__toggle.active .nav__toggle-item:before{
+    
+    transform: rotate(45deg) translateX(-2px);
+    transform-origin: left top;
+    
+}
+.nav__toggle.active .nav__toggle-item:after{
+    transform: rotate(-45deg) translateX(-2px);;
+    transform-origin: left bottom;
+    
+}
+    
+
 /*<!--   =======SLIDER=======-->*/
 .slider{
     position: absolute;
@@ -495,6 +593,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     position: relative;
 }
+
 .accordion__header:after{
     content: "";
     display: block;
@@ -569,6 +668,39 @@ h1, h2, h3, h4, h5, h6 {
     width: 60px;
     margin-right: 10px;
     background-color: #f38181;
+}
+
+.slick-arrow{
+    
+    border: 0;
+    outline: 0;
+    font-size: 0;
+    color: transparent;
+    
+    content: "";
+    display: block;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 16px;
+    height: 16px;
+    border-top: 2px solid #e5e5e5;
+    border-left: 2px solid #e5e5e5;
+    
+    z-index: 1;
+    
+    
+    
+}
+.slick-prev{
+    left: 0;
+    transform: rotate(-45deg);
+}
+.slick-next{
+    right: 0;
+    transform: rotate(135deg);
 }
 
 /*===========team=========*/
@@ -684,6 +816,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sect--client{
     padding-top: 60px;
+    margin-top: 0 !important;
 }
 
 
@@ -1207,10 +1340,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 770px){
-    /*    intro*/
-    nav{
-        display: none;
+    
+    .intro{
+        min-height: 500px;
     }
+    
+    
+    /*    intro*/
+    .nav{
+        display: none;
+        width: 100%;
+        background-color: #e98f84;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+    .nav.active{
+        display: block;
+    }
+    .nav__link{
+        margin: 0;
+        padding: 8px 20px;
+        display: block;
+    }
+    .nav__toggle{
+        display: block;
+        bottom: 20px;
+    }
+    
 /*    slider*/
     .slider__text{
         display: none;
@@ -1284,6 +1441,20 @@ h1, h2, h3, h4, h5, h6 {
         padding-bottom: 15px;
         position: static;
         margin: 0 auto;
+    }
+    
+    
+    .slick-arrow{
+        top: 25%;
+        transform: translateY(-75%)
+    }
+    .slick-prev{
+    
+    transform: rotate(-45deg);
+    }
+    .slick-next{
+    
+    transform: rotate(135deg);
     }
     
 /*    logos*/
