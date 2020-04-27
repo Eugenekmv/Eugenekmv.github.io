@@ -32,7 +32,7 @@ $(function(){
             blockOffset = $(blockId).offset().top;
         
         $('html, body').animate({
-            scrollTop: blockOffset - 80
+            scrollTop: blockOffset - 85
         }, 600);
         
         $('nav a').removeClass('active');
