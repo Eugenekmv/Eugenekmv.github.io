@@ -49,7 +49,7 @@ $(function(){
         
         $('#nav').toggleClass('active');
         $(this).toggleClass('active');
-        
+        $('header').toggleClass('header--color')
        
         
     });
